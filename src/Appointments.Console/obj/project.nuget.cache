@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ggVkicZQCdI=",
+  "success": true,
+  "projectFilePath": "/Users/dimitriszachos/Documents/aa-coaching/src/Appointments.Console/Appointments.Console.csproj",
+  "expectedPackageFiles": [
+    "/Users/dimitriszachos/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
