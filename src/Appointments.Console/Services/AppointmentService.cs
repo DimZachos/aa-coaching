@@ -18,6 +18,18 @@ public class AppointmentService : IAppointmentService
     }
 
     public IReadOnlyList<Appointment> ReadAppointments() => _appointments;
+
+    public void Update(Appointment appointment)
+    {
+        var existingAppointment = _appointments.FirstOrDefault(a => a.Id == appointment.Id);
+        if (existingAppointment == null)
+            throw new KeyNotFoundException($"Appointment with Id {appointment.Id} not found.");
+
+        existingAppointment.CustomerId = appointment.CustomerId;
+        existingAppointment.ServiceTypeEnum = appointment.ServiceTypeEnum;
+        existingAppointment.Time = appointment.Time;
+        existingAppointment.Notes = appointment.Notes;
+    }
     
     public void Delete(Appointment appointment)
     {
