@@ -14,7 +14,7 @@ public class CustomerService : ICustomerService
         _customersValidator = customerValidator;
         _customers = customers;
     }
-    
+
     public void Add(Customer customer)
     {
         var customerValidation = _customersValidator.Validate(customer);

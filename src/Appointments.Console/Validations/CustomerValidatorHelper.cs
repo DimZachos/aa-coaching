@@ -1,7 +1,7 @@
 using Appointments.Console.Models;
 using FluentValidation;
 
-namespace Appointments.Console.Helpers;
+namespace Appointments.Console;
 
 public class CustomerValidatorHelper : AbstractValidator<Customer>
 {
@@ -23,7 +23,8 @@ public class CustomerValidatorHelper : AbstractValidator<Customer>
         
         RuleFor(c => c.PhoneNumber)
             .NotEmpty()
-            .Matches(@"^\+\d{10,}$")
-            .WithMessage("Phone must be in format (+XXXXXXXXXX)");
+            .Must(phoneNumber => phoneNumber != null && phoneNumber.All(char.IsDigit))
+            .Length(10)
+            .WithMessage("Phone must be in format (1234567890)");
     }
 }

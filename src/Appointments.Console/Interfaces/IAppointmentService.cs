@@ -6,5 +6,6 @@ public interface IAppointmentService
 {
     void Add(Appointment appointment);
     IReadOnlyList<Appointment> ReadAppointments();
+    void Update(Appointment appointment);
     void Delete(Appointment appointment);
 }
